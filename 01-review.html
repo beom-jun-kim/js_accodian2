@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style>
+    button {
+        padding: .5rem;
+    }
+    .box {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        border-radius: 5px;
+    }
+    .gold {
+        background: glod;
+    }
+</style>
+</head>
+<body>
+
+    <!-- 1번 : inline 방식 -->
+    <button>click</button>
+
+    <div class="box gold">
+
+
+    </div>
+
+
+    <script>
+
+        var box = document.querySelector('.box');
+        var btn = document.querySelector('button');
+
+        // 2번 :property listener
+        // button.onclick = function (){
+        //     box.style.backgroundColor = 'coral';
+        // }
+
+        // function handleColor(){
+        //     box.style.backgroundColor = 'coral';
+        // }
+
+        // addEventListener 방식
+        // button.addEventListener('click', function(){
+        //     box.style.backgroundColor = 'coral';
+        // });
+    </script>
+
+
+
+
+
+</body>
+</html>

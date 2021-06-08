@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    li {
+        list-style: none;
+    }
+    .flexbox-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header {
+        /* position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%; */
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        background: #6a7ba2;
+        color: #ffdfde;
+    }
+    .toggle {
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        position: relative;
+        cursor: pointer;
+    }
+    .toggle span {
+        position: absolute;
+        /* top: 0; */
+        left: 0;
+        height: 8px;
+        width: 100%;
+        border-radius: .5rem;
+        background: #666;
+        transition: 300ms;
+    }
+    .toggle span:nth-child(1){
+        top: 0;
+        left: 0;
+    }
+    .toggle span:nth-child(2),
+    .toggle span:nth-child(3){
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .toggle span:nth-child(4){
+        bottom: 0;
+        left: 0;
+    }
+    .wrapper {
+        width: 500px;
+        text-align: center;
+    }
+    section {
+        height: 100vh;
+    }
+    section:nth-of-type(1){
+        background: brown;
+    }
+    section:nth-of-type(2){
+        background:darkblue;
+    }
+    section:nth-of-type(3){
+        background: darkcyan;
+    }
+    .arrow-top {
+        position: fixed;
+        bottom: 5rem;
+        right: 5rem;
+        width: 50px;
+        height: 50px;
+        background: #6a7ba2;
+        color: #ffdfde;
+        text-decoration: none;
+        border-radius: .5rem;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.404);
+        opacity: 0;
+        visibility: hidden;
+        transition: 400ms;
+    }
+    .arrow-top.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    .toggle.active span:nth-child(1),
+    .toggle.active span:nth-child(4)
+    {
+        display: none;
+    }
+    .toggle.active span:nth-child(2){
+        transform: rotate(45deg);
+    }
+    .toggle.active span:nth-child(3){
+        transform: rotate(-45deg);
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 150px;
+        height: 100vh;
+        background: #6a7ba2;
+        color: #ffdfde;
+        padding-top: 72px;
+        z-index: -1;
+        transform: translate(100%);
+        transition: 300ms;
+    }
+    .navbqr.active {
+        transform: translate(0);
+    }
+    .navbar__menu {
+        /* border: 1px solid #000; */
+        display: block;
+        height: 70px;
+        text-align: center;
+        line-height: 70px;
+    }
+</style>
+
+</head>
+<body>
+    
+    <header id = "header" class="header">
+        <div id="toggle" class="toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="navbar active">
+            <li class="navbar__item">
+                <a href="#" class="navber__menu">
+                    menu1
+                </a>
+            </li>
+            <li class="navbar__item">
+                <a href="#" class="navber__menu">
+                    menu2
+                </a>
+            </li>
+            <li class="navbar__item">
+                <a href="#" class="navber__menu">
+                    menu3
+                </a>
+            </li>
+        </ul>
+    </header>
+    <section id="about" class="flexbox-center">
+        <div class="wrapper">
+            <h1>section about</h1>
+            <p>Lorem ipsum dolor sit.</p>
+        </div>
+    </section>
+    <section id="skill">
+        <div class="wrapper">
+            <h1>section skill</h1>
+            <p>Lorem ipsum dolor sit.</p>
+        </div>
+    </section>
+    <section id="portfolio">
+        <div class="wrapper">
+            <h1>section portfolio</h1>
+            <p>Lorem ipsum dolor sit.</p>
+        </div>
+    </section>
+    <a href="#" id="arrowTop" class="arrow-top flexbox-center visible">top</a>
+    <script src="./script.js">
+    </script>
+</body>
+</html>
